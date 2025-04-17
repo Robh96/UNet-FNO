@@ -22,7 +22,7 @@ This project focuses on optimizing a Half-UNet Fourier Neural Operator (FNO) hyb
 ```
 project_root/
 ├── configs/
-    ├── config.py          # Configuration management (base_config.yaml)
+│   ├── config.py          # Configuration management (base_config.yaml)
 ├── data/                  # Data files (managed by the_well)
 ├── src/                   # Source code
 │   ├── data_processing/   # Data loading and preprocessing (using the_well)
@@ -80,7 +80,6 @@ Training progress and results are visualized and saved in the `outputs/figures/`
 
 Comparison plots showing the input field, the model's prediction, and the target field for a sample from the validation set are generated periodically during training.
 
-*(Placeholder for example comparison plot image)*
 <div align="center">
   <img src="figures\comparison.PNG" alt="Comparison after 15 epochs." width="800">
   <br>
