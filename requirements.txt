@@ -1,0 +1,8 @@
+torch
+PyYAML
+optuna
+matplotlib
+numpy
+# Add 'the_well' if it's installable via pip, otherwise note manual installation needed.
+# the_well @ git+https://github.com/user/the_well_repo.git # Example if it's a git repo
+# Or add instructions in README.md if it requires manual setup.

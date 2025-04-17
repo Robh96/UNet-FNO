@@ -1,0 +1,30 @@
+# --- Data ---
+train_path: "C:/Users/Rob.Hart-Villamil/Documents/python_project_files/FNOs/the_well_data/datasets/"
+test_path: "C:/Users/Rob.Hart-Villamil/Documents/python_project_files/FNOs/the_well_data/datasets/"
+dataset_name: "turbulent_radiative_layer_2D"
+batch_size: 64
+
+# --- Training (Defaults/Full Run) ---
+epochs: 100 # Total epochs for final training run AFTER optimization
+patience: 10 # Increased patience for full run
+learning_rate: 0.0003 # Default LR (Optuna might override)
+weight_decay: 0.00001 # Default WD (Optuna might override)
+step_size: 20 # Scheduler step size for full run
+gamma: 0.5 # Scheduler gamma for full run
+best_model_path: "outputs/models/half_unet_fno_best_model.pth" # Path for the final best model
+
+# --- Model Architecture (Defaults/Fixed) ---
+# These can be tuned by Optuna, define defaults or fixed values here
+default_modes: 20
+default_width: 48
+default_levels: 3
+default_num_final_blocks: 2
+default_activation: "gelu" # e.g., "relu", "gelu"
+
+# --- Optuna Study ---
+optuna_n_trials: 50 # Number of trials for Optuna study
+optuna_epochs_per_trial: 15 # Number of epochs to train each Optuna trial
+optuna_patience_per_trial: 3 # Early stopping patience within a trial
+optuna_study_name: "half_unet_fno_optimization"
+optuna_storage: "sqlite:///outputs/optuna/half_unet_fno_study.db" # Use SQLite for persistence
+optuna_best_model_path_template: "outputs/optuna/models/trial_{trial_number}_best.pth" # Save best model per trial
